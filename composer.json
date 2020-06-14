@@ -1,0 +1,54 @@
+{
+    "name": "resohead/laravel-cli-schema",
+    "description": "List database table schema from Artisan (Laravel CLI)",
+    "keywords": [
+        "resohead",
+        "laravel-cli-schema"
+    ],
+    "homepage": "https://github.com/resohead/laravel-cli-schema",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "resohead",
+            "email": "s.white9904@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0|^5.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Resohead\\LaravelCliSchema\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Resohead\\LaravelCliSchema\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Resohead\\LaravelCliSchema\\LaravelCliSchemaServiceProvider"
+            ],
+            "aliases": {
+                "LaravelCliSchema": "Resohead\\LaravelCliSchema\\LaravelCliSchemaFacade"
+            }
+        }
+    }
+}
